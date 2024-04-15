@@ -23,6 +23,12 @@ select * from public.users
       "ALTER TABLE ONLY users ALTER COLUMN id TYPE int USING id::INT;",
       "ALTER TABLE ONLY users ALTER COLUMN type TYPE INT USING type::INT;",
       "ALTER TABLE ONLY users ALTER COLUMN email_addresses TYPE int[] USING json_array_to_int_array(email_addresses);",
-      "ALTER TABLE ONLY users ALTER COLUMN permissions_templates TYPE int[] USING json_array_to_int_array(permissions_templates);"
+      "ALTER TABLE ONLY users ALTER COLUMN permissions_templates TYPE int[] USING json_array_to_int_array(permissions_templates);",
+      "ALTER TABLE ONLY users ALTER COLUMN email_addresses SET DEFAULT '{}'::integer[]",
+      "ALTER TABLE ONLY users ALTER COLUMN permissions_templates SET DEFAULT '{}'::integer[]",
+      "ALTER TABLE ONLY users ALTER COLUMN settings SET DEFAULT '{}'::jsonb",
+      "ALTER TABLE ONLY users ALTER COLUMN permissions SET DEFAULT '{}'::jsonb",
+      "ALTER TABLE ONLY users ALTER COLUMN overridden_permissions SET DEFAULT '{}'::jsonb",
+      "ALTER TABLE ONLY users ALTER COLUMN sessions SET DEFAULT '[]'::jsonb",
     ]
 ) }}
