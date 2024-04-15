@@ -1,16 +1,12 @@
-
 version: 2
 
 models:
-    - name: users
-      description: "users test george"
-      config:
-          enabled: true
-<<<<<<< HEAD
-          tags: users_george
+  - name: users
+    description: "users test george"
+    config:
+      enabled: true
+      tags: 
+        - users_george
     columns:
       - name: password
         data_type: jsonb
-=======
-          tags: users_george
->>>>>>> a9a80bb7caa96e4f7fa83c13660b10bcafa9e1f1
