@@ -22,7 +22,7 @@ select * from public.users
       "ALTER TABLE ONLY users ALTER COLUMN last_login_ip TYPE inet USING last_login_ip::inet;",
       "ALTER TABLE ONLY users ALTER COLUMN id TYPE int USING id::INT;",
       "ALTER TABLE ONLY users ALTER COLUMN type TYPE INT USING type::INT;",
-      "ALTER TABLE ONLY users ALTER COLUMN email_addresses TYPE integer[] USING email_addresses::integer[];",
-      "ALTER TABLE ONLY users ALTER COLUMN permissions_template TYPE integer[] USING permissions_template::integer[];"
+      "ALTER TABLE ONLY users ALTER COLUMN email_addresses TYPE int[] USING ARRAY(SELECT value::int FROM jsonb_array_elements_text(email_addresses::jsonb) AS elements(value))::int[];",
+      "ALTER TABLE ONLY users ALTER COLUMN permissions_template TYPE int[] USING ARRAY(SELECT value::int FROM jsonb_array_elements_text(permissions_template::jsonb) AS elements(value))::int[];"
     ]
 ) }}
