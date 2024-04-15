@@ -13,6 +13,14 @@ select * from public.users
       "ALTER TABLE ONLY users ALTER COLUMN type SET NOT NULL;",
       "ALTER TABLE ONLY users ALTER COLUMN require_new_password SET DEFAULT false;",
       "ALTER TABLE ONLY users ALTER COLUMN require_otp SET DEFAULT false;",
-      "ALTER TABLE ONLY users ALTER COLUMN active SET DEFAULT true;"
+      "ALTER TABLE ONLY users ALTER COLUMN active SET DEFAULT true;",
+      "ALTER TABLE ONLY users ALTER COLUMN settings TYPE jsonb USING settings::jsonb;",
+      "ALTER TABLE ONLY users ALTER COLUMN sessions TYPE jsonb USING sessions::jsonb;",
+      "ALTER TABLE ONLY users ALTER COLUMN change_log TYPE jsonb USING change_log::jsonb;",
+      "ALTER TABLE ONLY users ALTER COLUMN overidden_permissions TYPE jsonb USING overidden_permissions::jsonb;",
+      "ALTER TABLE ONLY users ALTER COLUMN permissions TYPE jsonb USING permissions::jsonb;",
+      "ALTER TABLE ONLY users ALTER COLUMN last_login_ip TYPE inet;",
+      "ALTER TABLE ONLY users ALTER COLUMN id TYPE INT;",
+      "ALTER TABLE ONLY users ALTER COLUMN type TYPE INT;"
     ]
 ) }}
