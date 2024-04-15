@@ -4,4 +4,6 @@ version: 2
 models:
     - name: users
       description: "users test george"
-      tags: users_george
+      config:
+          enabled: true
+          tags: users_george
