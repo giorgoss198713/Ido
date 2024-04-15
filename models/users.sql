@@ -21,6 +21,8 @@ select * from public.users
       "ALTER TABLE ONLY users ALTER COLUMN permissions TYPE jsonb USING permissions::jsonb;",
       "ALTER TABLE ONLY users ALTER COLUMN last_login_ip TYPE inet USING last_login_ip::inet;",
       "ALTER TABLE ONLY users ALTER COLUMN id TYPE int USING id::INT;",
-      "ALTER TABLE ONLY users ALTER COLUMN type TYPE INT USING type::INT;"
+      "ALTER TABLE ONLY users ALTER COLUMN type TYPE INT USING type::INT;",
+      "ALTER TABLE ONLY users ALTER COLUMN email_addresses TYPE integer[] USING email_addresses::integer[];",
+      "ALTER TABLE ONLY users ALTER COLUMN permissions_template TYPE integer[] USING permissions_template::integer[];"
     ]
 ) }}
