@@ -19,8 +19,8 @@ select * from public.users
       "ALTER TABLE ONLY users ALTER COLUMN change_log TYPE jsonb USING change_log::jsonb;",
       "ALTER TABLE ONLY users ALTER COLUMN overridden_permissions TYPE jsonb USING overridden_permissions::jsonb;",
       "ALTER TABLE ONLY users ALTER COLUMN permissions TYPE jsonb USING permissions::jsonb;",
-      "ALTER TABLE ONLY users ALTER COLUMN last_login_ip TYPE inet;",
-      "ALTER TABLE ONLY users ALTER COLUMN id TYPE INT;",
-      "ALTER TABLE ONLY users ALTER COLUMN type TYPE INT;"
+      "ALTER TABLE ONLY users ALTER COLUMN last_login_ip TYPE inet USING last_login_ip::inet;",
+      "ALTER TABLE ONLY users ALTER COLUMN id TYPE int USING id::INT;",
+      "ALTER TABLE ONLY users ALTER COLUMN type TYPE INT USING type::INT;"
     ]
 ) }}
